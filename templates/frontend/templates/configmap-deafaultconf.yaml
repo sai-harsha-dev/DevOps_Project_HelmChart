@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.component}}-configmap
+data:
+  default.conf: |
+        upstream catalogue {
+            server catalogue:8080/; }
+
+        server {
+            listen 80;
+            server_name  localhost;
+
+        # Reverse proxy for main webpage
+        location / {
+            root   /usr/share/nginx/html;
+            index  index.html index.htm; }
+
+        location /images/ {
+            expires 5s;
+            root   /usr/share/nginx/html;
+            try_files $uri /images/placeholder.png; }
+
+        # Reverse proxy for catalogue page
+        location /api/catalogue/ {
+            proxy_pass http://catalogue ; }
+
+        error_page   500 502 503 504  /50x.html;
+            
+        location = /50x.html {
+            root   /usr/share/nginx/html; }
+
+        }
