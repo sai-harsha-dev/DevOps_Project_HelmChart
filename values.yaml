@@ -2,4 +2,4 @@ component: main
 
 ports:
   frontend: 80
-  
+  catalogue: 8080
