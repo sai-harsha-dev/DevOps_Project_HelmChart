@@ -14,4 +14,11 @@ spec:
             name: frontend-service
             port:
               number: {{ .Values.ports.frontend}}
+      - path: /api/catalogue
+        pathType: Prefix
+        backend:
+          service:
+            name: catalogue-service
+            port:
+              number: {{ .Values.ports.catalogue}}
       
