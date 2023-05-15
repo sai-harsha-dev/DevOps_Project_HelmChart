@@ -1,0 +1,26 @@
+# Presistant Volume Claim
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.component}}-pvc
+spec:
+  storageClassName: {{ .Values.component}}-storageclass 
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: {{ .Values.component.storage.size}}
+
+--- 
+# Storage Class
+
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: {{ .Values.component}}-storageclass 
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-ap
+  fileSystemId: {{ .Values.efsspec.filesystem-id}}
+  directoryPerms: "700"
+  
