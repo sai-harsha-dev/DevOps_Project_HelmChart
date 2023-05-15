@@ -23,7 +23,7 @@ spec:
       - name: {{ .Values.component}}-pods
         image: {{ .Values.image}}
         ports:
-        - containerPort: {{ .Values.port}}
+        - containerPort: {{ .Values.global.ports.frontend}}
         resources:
           requests:
             cpu: {{ .Values.MinCpu}}

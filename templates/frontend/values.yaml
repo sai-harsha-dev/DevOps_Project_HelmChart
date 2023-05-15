@@ -1,7 +1,7 @@
 component: frontend
 
 image: vnsharsha7999/frontend:v1
-port: 80  # port to send traffic to frontend container
+
 
 MinCpu: 200m  # Minimum CPU cores in millicores
 MaxCpu: 500m  # Maximum CPU cores in millicores   
