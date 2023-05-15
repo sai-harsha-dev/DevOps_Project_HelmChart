@@ -1,0 +1,12 @@
+component: catalogue
+
+image: vnsharsha7999/catalogue:v1
+port: 8080  # port to send traffic to catalogue
+
+MinCpu: 200m  # Minimum CPU cores in millicores
+MaxCpu: 500m  # Maximum CPU cores in millicores
+maxUtilization: 90  # Maximum CPU usage limit
+
+minReplicas: 1
+maxReplicas: 10
+
