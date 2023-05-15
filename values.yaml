@@ -1,5 +1,8 @@
+global:
+  ports:
+    frontend: 80
+    catalogue: 8080
+
+
 component: main
 
-ports:
-  frontend: 80
-  catalogue: 8080
