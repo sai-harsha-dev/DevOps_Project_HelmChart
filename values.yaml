@@ -3,6 +3,7 @@ global:
     frontend: 80
     catalogue: 8080
     user: 8000
+    cart: 8001
 
 
 component: main
