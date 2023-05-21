@@ -2,6 +2,7 @@ global:
   ports:
     frontend: 80
     catalogue: 8080
+    user: 8000
 
 
 component: main
