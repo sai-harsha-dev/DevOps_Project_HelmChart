@@ -1,0 +1,13 @@
+component: cart
+
+image: vnsharsha7999/cart:v1
+
+
+MinCpu: 200m  # Minimum CPU cores in millicores
+MaxCpu: 500m  # Maximum CPU cores in millicores
+maxUtilization: 90  # Maximum CPU usage limit
+
+minReplicas: 1
+maxReplicas: 10
+
+port: 8080
