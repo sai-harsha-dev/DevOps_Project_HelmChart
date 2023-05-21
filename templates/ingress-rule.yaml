@@ -27,5 +27,5 @@ spec:
           service:
             name: user-service
             port:
-              number: {{ .Values.ports.catalogue}}
+              number: {{ .Values.ports.user}}
       
