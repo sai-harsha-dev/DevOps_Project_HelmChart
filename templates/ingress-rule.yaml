@@ -21,4 +21,11 @@ spec:
             name: catalogue-service
             port:
               number: {{ .Values.ports.catalogue}}
+      - path: /api/user
+        pathType: Prefix
+        backend:
+          service:
+            name: user-service
+            port:
+              number: {{ .Values.ports.catalogue}}
       
