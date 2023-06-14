@@ -1,0 +1,24 @@
+component: mysql
+
+image: vnsharsha7999/mysql:v1
+port: 3306  # port to send traffic to mongodb
+
+MinCpu: 200m  # Minimum CPU cores in millicores
+MaxCpu: 500m  # Maximum CPU cores in millicores
+maxUtilization: 90  # Maximum CPU usage limit
+
+minReplicas: 1
+maxReplicas: 10
+
+storage:
+  - size: 5Gi  # Size of efs to provision
+
+csi-driver-spec:
+  - aws-account: us-east-1  # AWS account ID 
+  - aws-csi-create-role: AmazonEKS_EFS_CSI_DriverRole # AWS IAM role to use for provisioning efs
+
+efsspec:
+  - filesystem-id: mysql-efs  # exisiting EFS filesystem name to provision storage
+
+volume:
+  - mounthpath: /data/db  # Directory to store mongodb data
