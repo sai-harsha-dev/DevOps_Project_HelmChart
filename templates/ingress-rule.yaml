@@ -35,4 +35,11 @@ spec:
             name: cart-service
             port:
               number: {{ .Values.ports.cart}}
+      - path: /api/shipping/
+        pathType: Prefix
+        backend:
+          service:
+            name: shipping-service
+            port:
+              number: {{ .Values.ports.shipping}}
       
