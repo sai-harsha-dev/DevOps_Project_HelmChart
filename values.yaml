@@ -4,6 +4,7 @@ global:
     catalogue: 8080
     user: 8000
     cart: 8001
+    shipping: 8002
 
 
 component: main
