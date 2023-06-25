@@ -5,7 +5,7 @@ global:
     user: 8000
     cart: 8001
     shipping: 8002
-
+    payment: 8003
 
 component: main
 
