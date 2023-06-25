@@ -6,6 +6,7 @@ global:
     cart: 8001
     shipping: 8002
     payment: 8003
+    dispatch: 8004
 
 component: main
 
