@@ -49,4 +49,11 @@ spec:
             name: payment-service
             port:
               number: {{ .Values.ports.payment}}
+      - path: /api/dispatch/
+        pathType: Prefix
+        backend:
+          service:
+            name: dispatch-service
+            port:
+              number: {{ .Values.ports.dispatch}}
       
