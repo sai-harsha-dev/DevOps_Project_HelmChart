@@ -42,4 +42,11 @@ spec:
             name: shipping-service
             port:
               number: {{ .Values.ports.shipping}}
+      - path: /api/payment/
+        pathType: Prefix
+        backend:
+          service:
+            name: payment-service
+            port:
+              number: {{ .Values.ports.payment}}
       
